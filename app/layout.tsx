@@ -16,13 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Sidebar>
-        {/* this does not mean that everything in the sidebar will be clietn component
+      {/* this does not mean that everything in the sidebar will be clietn component
           thats because we are passing the whats inside the sidebar as children, so they will
           remain as serverside components
         */}
-        <body className={font.className}>{children}</body>
-      </Sidebar>
+      <body className={font.className}>
+        <Sidebar>{children}</Sidebar>
+      </body>
     </html>
   );
 }
