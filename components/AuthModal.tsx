@@ -7,6 +7,7 @@ import {
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 import useAuthModal from "@/hooks/useAuthModal";
 import Modal from "./Modal";
@@ -17,6 +18,13 @@ const AuthModal = () => {
   const { session } = useSessionContext();
   // useAuthModal hook helps use trigger the modal
   const { onClose, isOpen } = useAuthModal();
+
+  useEffect(() => {
+    if (session) {
+      router.refresh();
+      onClose();
+    }
+  }, [session, router, onClose]);
 
   const onChange = (open: Boolean) => {
     if (!open) {
@@ -29,7 +37,7 @@ const AuthModal = () => {
       title="welcome back"
       description="Login to your account"
       isOpen={isOpen}
-      onChange={() => {}}
+      onChange={onChange}
     >
       <Auth
         theme="dark"
