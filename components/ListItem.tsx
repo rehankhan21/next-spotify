@@ -26,9 +26,9 @@ const ListItem: React.FC<ListItemProps> = ({ image, name, href }) => {
     // then the child will get is hover effect
     <button
       onClick={onClick}
-      className=" relative group flex items-center rounded-md overflow-hidden gap-x-4 bg-neutral-100/10 hover:bg-neutral-100/20 transition pr-4 border"
+      className=" relative group flex items-center rounded-md overflow-hidden gap-x-4 bg-neutral-100/10 hover:bg-neutral-100/20 transition pr-4"
     >
-      <div className=" relative min-h-[64px] min-w-[64px] border border-red-500">
+      <div className=" relative min-h-[64px] min-w-[64px]">
         <Image src={image} alt={image} className=" object-cover" fill />
       </div>
       <p className=" font-medium truncate py-5">{name}</p>
