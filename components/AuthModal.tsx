@@ -39,6 +39,12 @@ const AuthModal = () => {
       isOpen={isOpen}
       onChange={onChange}
     >
+      <p className=" text-center font-bold">
+        Demo Account:
+        <p>
+          Email: potato2013@emailsinfo.com <p>Password: test123</p>
+        </p>
+      </p>
       <Auth
         theme="dark"
         magicLink
